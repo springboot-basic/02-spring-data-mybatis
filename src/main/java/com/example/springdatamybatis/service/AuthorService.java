@@ -11,5 +11,5 @@ public interface AuthorService {
     Author getAuthorById(int id) throws NotFoundException;
     void insertAuthor(AuthorRequest author);
     void updateAuthor(int id, AuthorRequest author) throws NotFoundException;
-    void deleteAuthor(int id);
+    void deleteAuthor(int id) throws NotFoundException;
 }

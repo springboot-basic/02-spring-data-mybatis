@@ -17,7 +17,7 @@ public interface AuthorRepository {
 
 
     @Select("""
-        SELECT * FROM author WHERE id = #{id}
+        SELECT * FROM author WHERE id = #{id} 
     """)
     @Result(property = "authorName", column = "author_name")
     Author findAuthorById(int id);
@@ -34,4 +34,11 @@ public interface AuthorRepository {
         WHERE id = #{id}
     """)
     void updateAuthorById(int id, @Param("a") AuthorRequest author);
+
+
+    @Delete("""
+        DELETE FROM author
+        WHERE id = #{id}
+    """)
+    void deleteAuthor(int id);
 }
